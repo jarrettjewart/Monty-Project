@@ -13,6 +13,21 @@
 /** Structs **/
 
 /**
+ * struct var_s - struct to contain varis of the interp
+ * @queue: flag used to choose in stack or queue mode
+ * @stack_len: length of the stack
+ */
+
+typedef struct var_s
+{
+	int queue;
+	size_t stack_len;
+} var_t;
+
+#define STACK 0
+#define QUEUE 1
+
+/**
  *  * struct stack_s - doubly linked list representation of a stack (or queue)
  *   * @n: integer
  *    * @prev: points to the previous element of the stack (or queue)
@@ -50,6 +65,7 @@ static int check_for_digit(char *arg);
 void m_push(stack_t **stack, unsigned int line_number);
 void get_op(char *op, stack_t **stack, unsigned int line_number);
 void m_pall(stack_t **stack, unsigned int line_number);
-
+stack_t *add_node(stack_t **stack, const int n);
+void free_stack(int status, void *arg);
 
 #endif
