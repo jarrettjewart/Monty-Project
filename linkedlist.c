@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add-node - add a new node to linked list
+ * add_node - add a new node to linked list
  * @stack: dble ptr front of list
  * @n: value to add to node
  * Return: ptr to new node, or NULL if fail
